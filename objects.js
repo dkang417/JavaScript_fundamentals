@@ -12,7 +12,6 @@
 };
 
 
-
 let users = {
     employees: [
         {'first_name':  'Miguel', 'last_name' : 'Jones'},
@@ -36,10 +35,6 @@ for(user in users){
 		console.log(`${num}- ${lname}, ${fname} - ${count}`);
 	}
 };
-
-
-
-
 
 
 
