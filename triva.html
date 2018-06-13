@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trvia!</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+	</script>
+</head>
+<body>
+	<div>
+		<h1>Trvia Night</h1>
+	</div>
+	<div>
+		<button id="btn">click me</button>
+	</div>
+
+	<script type="text/javascript">
+		$('#btn').click(function() { 
+			$.get("https://opentdb.com/api.php?amount=10&difficulty=easy", displayName);
+		});
+		
+		function displayName(data) {
+  			$('body').append("<h1>" +data.results[0].question+ "</h1");
+  			$('body').append("<p>"+ data.results[0].correct_answer+ "</p");
+  			$('body').append("<p>" + data.results[0].incorrect_answers[0]+ "</p");
+  			$('body').append("<p>" +  data.results[0].incorrect_answers[1]+ "</p");
+  			$('body').append("<p>" + data.results[0].incorrect_answers[2]+ "</p");
+
+  			$('body').append("<h1>" +data.results[1].question+ "</h1");
+  			$('body').append("<p>"+ data.results[1].correct_answer+ "</p");
+  			$('body').append("<p>" + data.results[1].incorrect_answers[0]+ "</p");
+  			$('body').append("<p>" +  data.results[1].incorrect_answers[1]+ "</p");
+  			$('body').append("<p>" + data.results[1].incorrect_answers[2]+ "</p");
+
+  			$('body').append("<h1>" +data.results[2].question+ "</h1");
+  			$('body').append("<p>"+ data.results[2].correct_answer+ "</p");
+  			$('body').append("<p>" + data.results[2].incorrect_answers[0]+ "</p");
+  			$('body').append("<p>" +  data.results[2].incorrect_answers[1]+ "</p");
+  			$('body').append("<p>" + data.results[2].incorrect_answers[2]+ "</p");
+		}
+	</script>
+</body>
+</html>
