@@ -19,23 +19,18 @@
 		});
 		
 		function displayName(data) {
-  			$('body').append("<h1>" +data.results[0].question+ "</h1");
-  			$('body').append("<p>"+ data.results[0].correct_answer+ "</p");
-  			$('body').append("<p>" + data.results[0].incorrect_answers[0]+ "</p");
-  			$('body').append("<p>" +  data.results[0].incorrect_answers[1]+ "</p");
-  			$('body').append("<p>" + data.results[0].incorrect_answers[2]+ "</p");
+			results = data.results;
+			for(let i = 0; i < results.length; i++){
+				answers = results[i].incorrect_answers;
+				answers.push(results[i].correct_answer);
+				answers.sort();
+				$('h1').append("<h2>" +results[i].question+ "</h2")
 
-  			$('body').append("<h1>" +data.results[1].question+ "</h1");
-  			$('body').append("<p>"+ data.results[1].correct_answer+ "</p");
-  			$('body').append("<p>" + data.results[1].incorrect_answers[0]+ "</p");
-  			$('body').append("<p>" +  data.results[1].incorrect_answers[1]+ "</p");
-  			$('body').append("<p>" + data.results[1].incorrect_answers[2]+ "</p");
+				for(let j = 0; j < answers.length; j++){
+					$('h1').append('<p>' + answers[j] + '</p>')
+				}
+			}
 
-  			$('body').append("<h1>" +data.results[2].question+ "</h1");
-  			$('body').append("<p>"+ data.results[2].correct_answer+ "</p");
-  			$('body').append("<p>" + data.results[2].incorrect_answers[0]+ "</p");
-  			$('body').append("<p>" +  data.results[2].incorrect_answers[1]+ "</p");
-  			$('body').append("<p>" + data.results[2].incorrect_answers[2]+ "</p");
 		}
 	</script>
 </body>
